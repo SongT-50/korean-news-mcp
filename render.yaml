@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: korean-news-mcp
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: PORT
+        value: "8080"
+      - key: MCP_TRANSPORT
+        value: "streamable-http"
