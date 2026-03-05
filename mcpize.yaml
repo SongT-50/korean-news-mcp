@@ -1,0 +1,60 @@
+name: korean-news-hub
+description: |
+  Korean & Global AI/Tech News MCP Server.
+  No API keys required. Works instantly with Claude, ChatGPT, Cursor, and all MCP clients.
+
+  Features:
+  - Korean news by category (politics, economy, tech, sports, etc.)
+  - Global AI/tech news (Claude, OpenAI, MCP, startups, etc.)
+  - Keyword news search (Korean & English)
+  - Real-time trending headlines
+  - Article content reader
+  - Daily briefing (Korea + AI + Claude combined)
+
+version: 1
+runtime: python
+python_version: "3.11"
+
+entry: server.py
+start: python server.py
+
+tools:
+  - name: korean_news
+    description: Get Korean news by category
+  - name: tech_news
+    description: Get global AI/tech news by topic
+  - name: news_search
+    description: Search news by keyword in Korean or English
+  - name: trending
+    description: Get real-time trending/headline news
+  - name: read_article
+    description: Read and extract article content from a URL
+  - name: daily_briefing
+    description: Generate comprehensive daily news briefing
+
+tags:
+  - news
+  - korean
+  - ai
+  - tech
+  - briefing
+  - claude
+  - mcp
+
+pricing:
+  model: freemium
+  plans:
+    - name: Free
+      price: 0
+      limits:
+        calls_per_day: 20
+    - name: Pro
+      price: 9.99
+      period: monthly
+      limits:
+        calls_per_day: 500
+    - name: Enterprise
+      price: 29.99
+      period: monthly
+      limits:
+        calls_per_day: unlimited
