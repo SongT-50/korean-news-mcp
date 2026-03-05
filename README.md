@@ -85,7 +85,30 @@ claude mcp add korean-news -- python server.py
 }
 ```
 
-### 3. MCPize
+### 3. 원격 접속 (설치 없이)
+
+Render에 배포된 서버를 바로 사용할 수 있습니다.
+
+```bash
+# Claude Code
+claude mcp add korean-news --transport sse https://korean-news-mcp.onrender.com/sse
+```
+
+```json
+// Claude Desktop
+{
+  "mcpServers": {
+    "korean-news": {
+      "transport": "sse",
+      "url": "https://korean-news-mcp.onrender.com/sse"
+    }
+  }
+}
+```
+
+> 무료 Render 인스턴스는 비활성 시 슬립됩니다. 첫 요청에 30~60초 걸릴 수 있습니다.
+
+### 4. MCPize
 
 [MCPize에서 바로 사용하기](https://mcpize.com/mcp/korean-news-hub)
 
