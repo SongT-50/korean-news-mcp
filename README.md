@@ -15,6 +15,8 @@
   <img src="https://img.shields.io/badge/Claude_Code-supported-5B21B6" alt="Claude Code">
   <img src="https://img.shields.io/badge/API_Key-불필요-10b981" alt="No API Key">
   <img src="https://img.shields.io/badge/Price-Free-10b981" alt="Free">
+  <br>
+  <a href="https://render.com/deploy?repo=https://github.com/SongT-50/korean-news-mcp"><img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render"></a>
 </p>
 
 ---
