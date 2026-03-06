@@ -313,10 +313,7 @@ if __name__ == "__main__":
     if transport == "stdio":
         mcp.run()
     else:
-        import uvicorn
-        from starlette.middleware.trustedhost import TrustedHostMiddleware
-
         port = int(os.environ.get("PORT", "8080"))
-        app = mcp.sse_app()
-        app.add_middleware(TrustedHostMiddleware, allowed_hosts=["*"])
-        uvicorn.run(app, host="0.0.0.0", port=port, proxy_headers=True)
+        mcp.settings.host = "0.0.0.0"
+        mcp.settings.port = port
+        mcp.run(transport="sse")
