@@ -309,11 +309,11 @@ def daily_briefing() -> str:
 
 if __name__ == "__main__":
     import os
-    transport = os.environ.get("MCP_TRANSPORT", "sse")
+    transport = os.environ.get("MCP_TRANSPORT", "stdio")
     if transport == "stdio":
         mcp.run()
     else:
         port = int(os.environ.get("PORT", "8080"))
         mcp.settings.host = "0.0.0.0"
         mcp.settings.port = port
-        mcp.run(transport="sse")
+        mcp.run(transport=transport)
