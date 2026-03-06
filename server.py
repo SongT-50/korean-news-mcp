@@ -284,6 +284,12 @@ async def read_article(url: str) -> str:
     return result
 
 
+@mcp.custom_route("/health", ["GET"])
+async def health(request):
+    from starlette.responses import JSONResponse
+    return JSONResponse({"status": "ok", "service": "korean-news-hub", "tools": 6})
+
+
 @mcp.tool()
 def daily_briefing() -> str:
     """Generate a comprehensive daily news briefing.
@@ -320,4 +326,5 @@ if __name__ == "__main__":
         mcp.settings.transport_security = TransportSecuritySettings(
             enable_dns_rebinding_protection=False,
         )
+
         mcp.run(transport=transport)
