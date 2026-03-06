@@ -91,7 +91,7 @@ Render에 배포된 서버를 바로 사용할 수 있습니다.
 
 ```bash
 # Claude Code
-claude mcp add korean-news --transport sse https://korean-news-mcp.onrender.com/sse
+claude mcp add korean-news --transport streamable-http https://korean-news-mcp.onrender.com/mcp
 ```
 
 ```json
@@ -99,8 +99,8 @@ claude mcp add korean-news --transport sse https://korean-news-mcp.onrender.com/
 {
   "mcpServers": {
     "korean-news": {
-      "transport": "sse",
-      "url": "https://korean-news-mcp.onrender.com/sse"
+      "transport": "streamable-http",
+      "url": "https://korean-news-mcp.onrender.com/mcp"
     }
   }
 }
@@ -153,7 +153,7 @@ claude mcp add korean-news --transport sse https://korean-news-mcp.onrender.com/
 | MCP SDK | `mcp[cli]` (FastMCP) |
 | RSS | `feedparser` |
 | 스크래핑 | `beautifulsoup4` + `httpx` |
-| 전송 | stdio / SSE |
+| 전송 | stdio / streamable-http |
 
 ## 프로젝트 구조
 
