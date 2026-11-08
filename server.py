@@ -323,8 +323,12 @@ if __name__ == "__main__":
         mcp.settings.host = "0.0.0.0"
         mcp.settings.port = port
         from mcp.server.transport_security import TransportSecuritySettings
+        allowed_hosts = os.environ.get(
+            "MCP_ALLOWED_HOSTS", "korean-news-mcp.onrender.com"
+        ).split(",")
         mcp.settings.transport_security = TransportSecuritySettings(
-            enable_dns_rebinding_protection=False,
+            enable_dns_rebinding_protection=True,
+            allowed_hosts=allowed_hosts,
         )
 
         mcp.run(transport=transport)
